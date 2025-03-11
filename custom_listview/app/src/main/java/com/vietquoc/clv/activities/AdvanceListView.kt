@@ -43,6 +43,6 @@ class AdvanceListView : AppCompatActivity() {
                 val studentAdapter = StudentAdapter(this, R.layout.row_student, lstStudent)
                 binding.lvStudentNew.adapter = studentAdapter
             }
-        }
+        }   
     }
 }
