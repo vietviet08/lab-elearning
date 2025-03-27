@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.vietquoc.ceb029_nguyenquocviet.viewmodel.LinearEquationViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".fragments.LinearEquationFragment">
+
+        <EditText
+                android:id="@+id/edt_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập a"
+                android:inputType="numberDecimal"/>
+
+        <EditText
+                android:id="@+id/edt_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập b"
+                android:inputType="numberDecimal"/>
+
+        <Button
+                android:id="@+id/btn_solve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giải phương trình"/>
+
+        <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả sẽ hiển thị ở đây"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingTop="16dp"/>
+    </LinearLayout>
+</layout>

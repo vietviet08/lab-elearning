@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment" android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.HomeFragment"
+              android:label="fragment_home" tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_homeFragment_to_perfectNumberFragment"
+                app:destination="@id/perfectNumberFragment"/>
+        <action android:id="@+id/action_homeFragment_to_linearEquationFragment"
+                app:destination="@id/linearEquationFragment"/>
+        <action android:id="@+id/action_homeFragment_to_homeComputerFragment"
+                app:destination="@id/homeComputerFragment"/>
+    </fragment>
+    <fragment android:id="@+id/linearEquationFragment"
+              android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.LinearEquationFragment"
+              android:label="fragment_linear_equation" tools:layout="@layout/fragment_linear_equation">
+        <action android:id="@+id/action_linearEquationFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/perfectNumberFragment"
+              android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.PerfectNumberFragment"
+              android:label="fragment_perfect_number" tools:layout="@layout/fragment_perfect_number">
+        <action android:id="@+id/action_perfectNumberFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/homeComputerFragment"
+              android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.HomeComputerFragment"
+              android:label="HomeComputerFragment">
+        <action android:id="@+id/action_homeComputerFragment_to_addComputerFragment4"
+                app:destination="@id/addComputerFragment4"/>
+        <action android:id="@+id/action_homeComputerFragment_to_editNoteFragment4"
+                app:destination="@id/editNoteFragment4"/>
+    </fragment>
+    <fragment android:id="@+id/addComputerFragment4"
+              android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.AddComputerFragment"
+              android:label="AddComputerFragment">
+        <action android:id="@+id/action_addComputerFragment4_to_homeComputerFragment"
+                app:destination="@id/homeComputerFragment"/>
+    </fragment>
+    <fragment android:id="@+id/editNoteFragment4"
+              android:name="com.vietquoc.ceb029_nguyenquocviet.fragments.EditNoteFragment"
+              android:label="EditNoteFragment">
+        <argument
+                android:name="computer"
+                app:argType="com.vietquoc.ceb029_nguyenquocviet.model.Computer"
+                app:nullable="false" />
+        <action android:id="@+id/action_editNoteFragment4_to_homeComputerFragment"
+                app:destination="@id/homeComputerFragment"/>
+    </fragment>
+</navigation>
