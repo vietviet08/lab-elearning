@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+
+    <item
+            android:id="@+id/linearEquationFragment"
+            android:icon="@drawable/ic_linear"
+            android:title="Linear Equation"/>
+
+    <item
+            android:id="@+id/perfectNumberFragment"
+            android:icon="@drawable/ic_perfect"
+            android:title="Perfect Number"/>
+
+    <item
+            android:id="@+id/homeComputerFragment"
+            android:icon="@drawable/ic_computer"
+            android:title="Computer Manager"/>
+</menu>

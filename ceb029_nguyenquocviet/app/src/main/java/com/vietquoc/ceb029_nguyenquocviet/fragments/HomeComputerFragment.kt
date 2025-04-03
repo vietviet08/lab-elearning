@@ -63,13 +63,13 @@ class HomeComputerFragment : Fragment(R.layout.fragment_home), SearchView.OnQuer
     private fun setupHomeRecyclerView() {
         noteAdapter = ComputerAdapter()
         binding.homeRecyclerView.apply {
-            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
             adapter = noteAdapter
             setHasFixedSize(true)
         }
 
         activity?.let {
-            noteViewModel.getAllNotes().observe(viewLifecycleOwner) { note ->
+            noteViewModel.getAllComputer().observe(viewLifecycleOwner) { note ->
                 noteAdapter.differ.submitList(note)
                 updateUI(note)
             }

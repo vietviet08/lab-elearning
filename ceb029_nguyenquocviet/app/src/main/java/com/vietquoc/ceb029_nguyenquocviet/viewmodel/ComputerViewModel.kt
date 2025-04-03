@@ -13,19 +13,19 @@ class ComputerViewModel @Inject constructor(
     private val computerRepository: ComputerRepository
 ) : ViewModel() {
 
-    fun addNote(computer: Computer) = viewModelScope.launch {
+    fun addComputer(computer: Computer) = viewModelScope.launch {
         computerRepository.insert(computer = computer)
     }
 
-    fun updateNote(computer: Computer) = viewModelScope.launch {
-        computerRepository.update(computer)
+    fun updateComputer(computer: Computer) = viewModelScope.launch {
+        computerRepository.update(computer = computer)
     }
 
-    fun deleteNote(computer: Computer) = viewModelScope.launch {
+    fun deleteComputer(computer: Computer) = viewModelScope.launch {
         computerRepository.delete(computer)
     }
 
-    fun getAllNotes() = computerRepository.getAllNotes()
+    fun getAllComputer() = computerRepository.getAllNotes()
 
     fun searchComputer(query: String) = computerRepository.searchNote(query)
 

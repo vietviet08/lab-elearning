@@ -12,15 +12,17 @@
               tools:context=".fragments.HomeFragment">
 
     <Button
+            android:backgroundTint="@color/yellow"
             android:id="@+id/btnPerfectNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="Kiểm tra số hoàn hảo"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
     <Button
             android:id="@+id/btnLinearEquation"
-            android:layout_width="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="Giải phương trình bậc 1"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -28,7 +30,8 @@
 
     <Button
             android:id="@+id/btnManageComputers"
-            android:layout_width="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="Quản lý máy tính"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"

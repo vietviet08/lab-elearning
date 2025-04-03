@@ -26,8 +26,6 @@
                 android:textColor="@color/orange"
                 android:textSize="24sp" />
 
-
-
         <EditText
                 android:id="@+id/addName"
                 android:layout_width="match_parent"
@@ -81,6 +79,20 @@
                 android:layout_marginTop="16dp"
                 android:maxLines="1"
                 android:fontFamily="@font/poppins"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addComputerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:backgroundTint="@color/yellow"
+                android:tintMode="@color/white"
+                android:src="@drawable/baseline_done_24"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="editFab" />
 
     </RelativeLayout>
 </layout>

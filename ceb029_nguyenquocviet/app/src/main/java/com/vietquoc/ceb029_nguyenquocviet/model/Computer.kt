@@ -8,11 +8,10 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "computer")
 @Parcelize
 data class Computer(
-
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
     val type: String,
-    val quantity: Double,
-    val price: Int
+    val quantity: Int,
+    val price: Double
 ) : Parcelable

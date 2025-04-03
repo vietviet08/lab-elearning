@@ -18,7 +18,6 @@ import com.vietquoc.ceb029_nguyenquocviet.model.Computer
 import com.vietquoc.ceb029_nguyenquocviet.viewmodel.ComputerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider {
 
@@ -26,7 +25,7 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider
     private val noteViewModel by viewModels<ComputerViewModel>()
     private lateinit var currentNote: Computer
     private lateinit var editNoteView: View
-
+    private val args: EditNoteFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,13 +42,15 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         editNoteView = view
-//        currentNote = args.computer!!
+        currentNote = args.computer!!
 
         binding.editName.setText(currentNote.name)
+        binding.editPrice.setText(currentNote.price.toString())
+        binding.editquantity.setText(currentNote.quantity.toString())
         binding.editType.setText(currentNote.type)
 
         binding.editNoteFab.setOnClickListener {
-            updateNote(editNoteView)
+            updateComputer(editNoteView)
         }
 
         val actionBar = (activity as? AppCompatActivity)?.supportActionBar
@@ -58,16 +59,16 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider
 
     }
 
-    private fun updateNote(view: View) {
+    private fun updateComputer(view: View) {
         val name = binding.editName.text.toString().trim()
         val price = binding.editPrice.text.toString().trim()
-        val type = binding.editPrice.text.toString().trim()
+        val type = binding.editType.text.toString().trim()
         val quantity = binding.editquantity.text.toString().trim()
 
-        val note = Computer(0, name, type, price.toDouble(), quantity.toInt())
+        val computer = Computer(currentNote.id, name, type, quantity.toInt(), price.toDouble())
 
-        noteViewModel.updateNote(note)
-        Toast.makeText(editNoteView.context, "Note updated successfully", Toast.LENGTH_SHORT)
+        noteViewModel.updateComputer(computer)
+        Toast.makeText(editNoteView.context, "Computer updated successfully", Toast.LENGTH_SHORT)
             .show()
         view.findNavController()
             .popBackStack(R.id.homeFragment, false)
@@ -86,10 +87,6 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider
             }
 
             android.R.id.home -> {
-                //1
-//                findNavController().popBackStack(R.id.homeFragment, false)
-
-                //2
                 view?.findNavController()
                     ?.popBackStack(R.id.homeFragment, false)
                 return true
@@ -101,10 +98,10 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_computer), MenuProvider
 
     private fun deleteNote(view: View) {
         AlertDialog.Builder(activity).apply {
-            setTitle("Delete Note")
-            setMessage("Are you sure you want to delete this note?")
+            setTitle("Delete Computer")
+            setMessage("Are you sure you want to delete this computer?")
             setPositiveButton("Delete") { _, _ ->
-                noteViewModel.deleteNote(currentNote)
+                noteViewModel.deleteComputer(currentNote)
 
                 Toast.makeText(
                     editNoteView.context,

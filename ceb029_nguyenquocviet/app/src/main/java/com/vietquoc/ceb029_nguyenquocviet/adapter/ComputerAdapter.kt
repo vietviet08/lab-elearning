@@ -18,7 +18,8 @@ class ComputerAdapter : RecyclerView.Adapter<ComputerAdapter.NoteViewHolder>() {
             return oldItem.id == newItem.id &&
                     oldItem.name == newItem.name &&
                     oldItem.type == newItem.type &&
-                    oldItem.price == newItem.price
+                    oldItem.price == newItem.price &&
+                    oldItem.quantity == newItem.quantity
         }
 
         override fun areContentsTheSame(oldItem: Computer, newItem: Computer): Boolean {
@@ -49,7 +50,6 @@ class ComputerAdapter : RecyclerView.Adapter<ComputerAdapter.NoteViewHolder>() {
         holder.itemBinding.type.text = currentNote.type
         holder.itemBinding.price.text = currentNote.price.toString()
         holder.itemBinding.quantity.text = currentNote.quantity.toString()
-
 
         holder.itemView.setOnClickListener {
             val direction = HomeComputerFragmentDirections.actionHomeComputerFragmentToEditNoteFragment4(currentNote)

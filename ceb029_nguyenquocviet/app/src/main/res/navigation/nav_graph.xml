@@ -43,7 +43,7 @@
         <argument
                 android:name="computer"
                 app:argType="com.vietquoc.ceb029_nguyenquocviet.model.Computer"
-                app:nullable="false" />
+                app:nullable="true" />
         <action android:id="@+id/action_editNoteFragment4_to_homeComputerFragment"
                 app:destination="@id/homeComputerFragment"/>
     </fragment>
