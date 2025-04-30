@@ -23,7 +23,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Add Computer."
                 android:textStyle="bold"
-                android:textColor="@color/orange"
+                android:textColor="@color/purple_500"
                 android:textSize="24sp" />
 
         <EditText
